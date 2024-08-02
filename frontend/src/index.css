@@ -16,17 +16,6 @@ body {
 }
 
 .shimmer {
-  /* background: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #edeef1 100%) !important;
-    background-size: 800px 104px !important;
-    display: inline-block !important;
-    position: relative !important;
-    overflow: hidden !important;
-    animation-duration: 1s !important;
-    animation-fill-mode: forwards !important;
-    animation-iteration-count: infinite !important;
-    animation-name: placeholderShimmer !important;
-    animation-timing-function: linear !important; */
-
   animation: shimmer 2s infinite linear;
   background: linear-gradient(to right, #2c2c2c 4%, #333 25%, #2c2c2c 36%);
   background-size: 1000px 100%;
@@ -52,4 +41,17 @@ body {
   right: 10vw;
   top: -10vw;
   z-index: -1;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #4b5563;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #1a202c;
 }

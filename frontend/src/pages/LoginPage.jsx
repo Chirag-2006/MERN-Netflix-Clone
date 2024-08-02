@@ -6,7 +6,7 @@ const LoginPage = () => {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
 
-  const { login } = useAuthUser();
+  const { login ,isLoggingin } = useAuthUser();
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -67,8 +67,9 @@ const LoginPage = () => {
             <button
               type="submit"
               className="w-full py-2 bg-red-600 text-white text-lg font-semibold rounded-md hover:bg-red-700"
+              disabled={isLoggingin}
             >
-              Login
+              {isLoggingin ? "Loading..." : "Login"}
             </button>
             <div>
               <p className="text-center text-gray-300">
