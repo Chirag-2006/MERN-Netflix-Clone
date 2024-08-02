@@ -20,7 +20,6 @@ const WatchPage = () => {
   const { contentType } = useContentStore();
 
   const sliderRef = useRef(null);
-  console.log("contentType", contentType);
 
   useEffect(() => {
     const getTrailers = async () => {
