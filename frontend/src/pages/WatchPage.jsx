@@ -20,11 +20,12 @@ const WatchPage = () => {
   const { contentType } = useContentStore();
 
   const sliderRef = useRef(null);
+  console.log("contentType", contentType);
 
   useEffect(() => {
     const getTrailers = async () => {
+      const res = await axios.get(`/api/v1/${contentType}/${id}/trailers`);
       try {
-        const res = await axios.get(`/api/v1/${contentType}/${id}/trailers`);
         setTrailers(res.data.trailers);
       } catch (error) {
         if (error.response.status === 404) {
@@ -103,18 +104,17 @@ const WatchPage = () => {
     );
   }
 
-  if(!content) {
+  if (!content) {
     return (
       <div className="h-screen bg-black text-white">
         <div className="max-w-6xl mx-auto">
-            <Navbar />
-            <div className="text-center mx-auto px-4 py-8 h-full mt-40">
-                <h2 className="text-2xl sm:text-5xl font-bold text-balance">
-                    Content not found 😓
-                </h2>
-            </div>
+          <Navbar />
+          <div className="text-center mx-auto px-4 py-8 h-full mt-40">
+            <h2 className="text-2xl sm:text-5xl font-bold text-balance">
+              Content not found 😓
+            </h2>
+          </div>
         </div>
-
       </div>
     );
   }
@@ -162,7 +162,7 @@ const WatchPage = () => {
             )}
             {trailers.length === 0 && (
               <h2 className="text-xl text-center mt-5">
-                No trailers available for{" "} 
+                No trailers available for{" "}
                 <span className="text-red-500 font-bold">
                   {content?.title || content?.name} 😓
                 </span>
@@ -209,7 +209,7 @@ const WatchPage = () => {
                 ref={sliderRef}
               >
                 {similarContent.map((content) => {
-                  if (content.poster_path === null) return null;    
+                  if (content.poster_path === null) return null;
                   return (
                     <Link
                       key={content.id}
