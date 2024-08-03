@@ -7,7 +7,7 @@ const Footer = () => {
         <p className="text-center text-balance text-sm leading-loose md:text-left">
           Built By{" "}
           <a
-            href="https://github.com"
+            href="https://github.com/Chirag-2006"
             target="_blank"
             className="font-medium underline underline-offset-4"
           >
@@ -15,7 +15,7 @@ const Footer = () => {
           </a>
           . The source code is available on{" "}
           <a
-            href="https://github.com"
+            href="https://github.com/Chirag-2006/MERN-Netflix-Clone"
             target="_blank"
             rel="noreferrer"
             className="font-medium underline underline-offset-4"
